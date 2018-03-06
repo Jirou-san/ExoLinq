@@ -84,7 +84,7 @@ namespace DataO.EF
         /// <summary>
         /// Reconstructions the sentance.
         /// </summary>
-        /// <param name="uneListe">The une liste.</param>
+        /// <param name="uneListe">Une liste.</param>
         /// <returns></returns>
         public string ReconstructionSentance(List<Word> uneListe)
         {
