@@ -1,11 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Data;
-using System.Data.SqlClient;
-using System.IO;
+
 
 namespace DataO.EF
 {
@@ -92,8 +89,10 @@ namespace DataO.EF
         public string ReconstructionSentance(List<Word> uneListe)
         {
             string reconstructionSentance ="";
-            SortArray(uneListe);
-            foreach(var unMot in uneListe)
+            var QueryTried= from l1 in uneListe
+                                   orderby l1.Index ascending
+                                   select l1;
+            foreach (var unMot in QueryTried)
             {
                 String.Intern(reconstructionSentance += (" "+unMot.Mot));
             }
