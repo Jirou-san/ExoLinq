@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Data;
+using System.Xml;
+using System.IO;
+using System.Text;
 
 
 namespace DataO.EF
@@ -105,9 +108,11 @@ namespace DataO.EF
     /// </summary>
     class Program
     {
+        
         static void Main(string[] args)
         {
             #region Test1
+            /*
             //Stock unStock = new Stock();
 
             //string connectionString = "Data Source=M2IPORT-5XXPNC2\\SQLEXPRESS; Initial Catalog=WideWorldImporters;" + "Integrated Security=true";
@@ -178,7 +183,24 @@ namespace DataO.EF
             
             Console.ReadKey();
 
+            */
+            #endregion
+            Datas oneData = new Datas("c:\\linqxml.xml");
 
+            Console.WriteLine("Les fichiers contenant m sont: "+Environment.NewLine);
+            foreach (var item in oneData.FilesNameM("C:\\DossierTest", "m"))
+            {
+                Console.WriteLine(item.ToString());
+            }
+            Console.WriteLine(Environment.NewLine + oneData.getWomenData());
+            Console.WriteLine(Environment.NewLine + oneData.getEmployeeCity());
+            oneData.addElementToXml();
+            Console.WriteLine("Ajout d'un élément effectué");
+            Console.ReadLine();
         }
+            
+        
+        
+
     }
 }
