@@ -10,16 +10,18 @@ namespace DataO.EF
     {
 
 
-        private int _i;
-        private string _mot; 
+        private int _index;
+        private string _mot;
+
         
-        public Word(int i, string word)
+        public Word(int index, string word)
         {
-            I = i;
+            Index = index;
             Mot = word;
         }
 
-        public int I { get => _i; set => _i = value; }
+        public int Index { get => _index; set => _index = value; }
         public string Mot { get => _mot; set => _mot = value; }
+
     }
 }
